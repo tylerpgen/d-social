@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    body {
+    body, html, #root, .app {
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
     
