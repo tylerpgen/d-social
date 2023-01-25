@@ -9,7 +9,6 @@ export const StyledContainer = styled(Container)`
 export const MainHeader = styled(Typography)`
   font-size: 10rem;
   font-family: ${({ theme }) => theme.boldFontFamily};
-  margin-top: ${({ theme }) => theme.margin};
   margin-bottom: ${({ theme }) => theme.margin};
   color: ${({ theme }) => theme.textColor};
 
