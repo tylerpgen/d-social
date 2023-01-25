@@ -1,12 +1,13 @@
 import React from "react";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import SocialPage from "Pages/socialPage";
+import LoginPage from "Pages/loginPage";
+import ProfilePage from "Pages/profilePage";
 import { ThemeProvider } from "styled-components";
 import { StyledEngineProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { StyledContainer } from "./styles";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
+import Home from "./Pages/Home/Home.js";
 import GlobalStyle from "./globalStyles";
-import "./App.css";
 import theme from "./theme.js";
 
 function App() {
@@ -16,10 +17,14 @@ function App() {
         <GlobalStyle />
         <StyledEngineProvider injectFirst>
           <CssBaseline />
-          <StyledContainer>
-            <Navbar />
-            <Home />
-          </StyledContainer>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/social" element={<SocialPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/profile/:userId" element={<ProfilePage />} />
+            </Routes>
+          </BrowserRouter>
         </StyledEngineProvider>
       </ThemeProvider>
     </>
