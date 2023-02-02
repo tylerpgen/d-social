@@ -25,9 +25,9 @@ function App() {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <Routes>
-              <Route path="/" element={<SocialPage />} />
+              <Route path="/" element={<LoginPage />} />
               {/* <Route path="/social" element={<SocialPage />} /> */}
-              <Route path="/login" element={<LoginPage />} />
+              {/* <Route path="/login" element={<LoginPage />} /> */}
               <Route path="/profile/:userId" element={<ProfilePage />} />
             </Routes>
           </ThemeProvider>
