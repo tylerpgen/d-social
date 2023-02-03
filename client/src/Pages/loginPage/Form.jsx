@@ -9,12 +9,13 @@ import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
-// yup Validation Schema
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
+  location: yup.string().required("required"),
+  occupation: yup.string().required("required"),
   picture: yup.string().required("required"),
 });
 
@@ -28,6 +29,8 @@ const initialValuesRegister = {
   lastName: "",
   email: "",
   password: "",
+  location: "",
+  occupation: "",
   picture: "",
 };
 
@@ -41,12 +44,12 @@ const Form = () => {
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isNonMobile = useMediaQuery("(min-width: 600px)");
+  const isNonMobile = useMediaQuery("(min-width:600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
-    //send form info with an image
+    // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
@@ -127,6 +130,26 @@ const Form = () => {
                   helperText={touched.lastName && errors.lastName}
                   sx={{ gridColumn: "span 2" }}
                 />
+                <TextField
+                  label="Location"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.location}
+                  name="location"
+                  error={Boolean(touched.location) && Boolean(errors.location)}
+                  helperText={touched.location && errors.location}
+                  sx={{ gridColumn: "span 4" }}
+                />
+                <TextField
+                  label="Occupation"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.occupation}
+                  name="occupation"
+                  error={Boolean(touched.occupation) && Boolean(errors.occupation)}
+                  helperText={touched.occupation && errors.occupation}
+                  sx={{ gridColumn: "span 4" }}
+                />
                 <Box gridColumn="span 4" border={`1px solid ${palette.neutral.medium}`} borderRadius="5px" p="1rem">
                   <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
@@ -179,7 +202,7 @@ const Form = () => {
             />
           </Box>
 
-          {/* Buttons */}
+          {/* BUTTONS */}
           <Box>
             <Button
               fullWidth
@@ -208,7 +231,7 @@ const Form = () => {
                 },
               }}
             >
-              {isLogin ? "Don't have an account? Sign up here." : "Already have an account? Login here."}
+              {isLogin ? "Don't have an account? Sign Up here." : "Already have an account? Login here."}
             </Typography>
           </Box>
         </form>
