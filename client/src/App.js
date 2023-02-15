@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
-// import SocialPage from "Pages/socialPage";
+import SocialPage from "Pages/socialPage";
 import LoginPage from "Pages/loginPage";
 import ProfilePage from "Pages/profilePage";
 // import { ThemeProvider } from "styled-components";
@@ -26,7 +26,7 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            {/* <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/" />} /> */}
+            <Route path="/home" element={isAuth ? <SocialPage /> : <Navigate to="/" />} />
             <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>
         </ThemeProvider>
