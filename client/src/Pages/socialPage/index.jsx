@@ -1,5 +1,6 @@
 import { Box, useMediaQuery } from "@mui/material";
 import Navbar from "Pages/navbar";
+import MyPostWidget from "Pages/widgets/MyPostWidget";
 import React from "react";
 import { useSelector } from "react-redux";
 import UserWidget from "widgets/UserWidget";
@@ -21,7 +22,9 @@ const SocialPage = () => {
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
           <UserWidget userId={_id} picturePath={picturePath} />
         </Box>
-        <Box flexBasis={isNonMobileScreens ? "42%" : undefined} mt={isNonMobileScreens ? undefined : "2rem"}></Box>
+        <Box flexBasis={isNonMobileScreens ? "42%" : undefined} mt={isNonMobileScreens ? undefined : "2rem"}>
+          <MyPostWidget picturePath={picturePath} />
+        </Box>
         {isNonMobileScreens && <Box flexBasis="26%"></Box>}
       </Box>
     </Box>
