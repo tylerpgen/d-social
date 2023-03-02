@@ -3,7 +3,8 @@ import Navbar from "Pages/navbar";
 import MyPostWidget from "Pages/widgets/MyPostWidget";
 import React from "react";
 import { useSelector } from "react-redux";
-import UserWidget from "widgets/UserWidget";
+import UserWidget from "Pages/widgets/UserWidget";
+import PostWidget from "Pages/widgets/PostWidget";
 
 const SocialPage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -24,6 +25,7 @@ const SocialPage = () => {
         </Box>
         <Box flexBasis={isNonMobileScreens ? "42%" : undefined} mt={isNonMobileScreens ? undefined : "2rem"}>
           <MyPostWidget picturePath={picturePath} />
+          <PostWidget userId={_id} />
         </Box>
         {isNonMobileScreens && <Box flexBasis="26%"></Box>}
       </Box>
