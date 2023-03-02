@@ -12,17 +12,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 
-const PostWidget = ({
-  postId,
-  postUserId,
-  name,
-  description,
-  location,
-  picturePath,
-  userPicturePath,
-  likes,
-  comments,
-}) => {
+const PostWidget = ({ postId, postUserId, name, description, picturePath, userPicturePath, likes, comments }) => {
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
@@ -49,7 +39,7 @@ const PostWidget = ({
 
   return (
     <WidgetWrapper m="2rem 0">
-      <Friend friendId={postUserId} name={name} subtitle={location} userPicturePath={userPicturePath} />
+      <Friend friendId={postUserId} name={name} userPicturePath={userPicturePath} />
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
