@@ -158,7 +158,11 @@ export const posts = [
       [userIds[3], true],
       [userIds[4], true],
     ]),
-    comments: ["random comment", "another random comment", "yet another random comment"],
+    comments: [
+      "random comment",
+      "another random comment",
+      "yet another random comment",
+    ],
   },
   {
     _id: new mongoose.Types.ObjectId(),
@@ -166,7 +170,8 @@ export const posts = [
     firstName: "Whatcha",
     lastName: "Doing",
     location: "Korea, CA",
-    description: "Another really long random description. This one is longer than the previous one.",
+    description:
+      "Another really long random description. This one is longer than the previous one.",
     picturePath: "post2.jpeg",
     userPicturePath: "p6.jpeg",
     likes: new Map([
@@ -188,7 +193,8 @@ export const posts = [
     firstName: "Jane",
     lastName: "Doe",
     location: "Utah, CA",
-    description: "This is the last really long random description. This one is longer than the previous one.",
+    description:
+      "This is the last really long random description. This one is longer than the previous one.",
     picturePath: "post3.jpeg",
     userPicturePath: "p5.jpeg",
     likes: new Map([
@@ -235,7 +241,8 @@ export const posts = [
     firstName: "Carly",
     lastName: "Vowel",
     location: "Chicago, IL",
-    description: "Just a short description. I'm tired of typing. I'm going to play video games now.",
+    description:
+      "Just a short description. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post5.jpeg",
     userPicturePath: "p8.jpeg",
     likes: new Map([

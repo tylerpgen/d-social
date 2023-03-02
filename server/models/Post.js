@@ -14,15 +14,15 @@ const postSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    location: String,
     description: String,
     picturePath: String,
     userPicturePath: String,
     likes: {
-      // Map is more efficient than using a Array for storing likes especially when it comes to a mass amount
       type: Map,
       of: Boolean,
     },
-    comment: {
+    comments: {
       type: Array,
       default: [],
     },
